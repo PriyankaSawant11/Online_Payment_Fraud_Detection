@@ -1,0 +1,124 @@
+  
+  <!-- 
+NAME @: Priyanka Sawant
+TOPIC @: Online Payment Fraud Detection Model Deployment
+DATE @:  11/06/2023
+-->
+
+  
+  <!-----------------------------  BASE SECTION  ----------------------------------->
+
+{% extends "base.html"%}
+
+  <!-------------------------------------------------------------------------------->
+
+{% block content %}
+
+
+  <!---------------------------  HOME BODY SECTION   ------------------------------>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="   w3-pale-yellow  w3-large">
+
+    <!-- About Container -->
+    <div class="w3-container" id="about">
+
+        <div class="w3-content" style="max-width:800px">
+
+            <h5 class="w3-center w3-padding-32"><span class="w3-tag w3-wide">ABOUT THE PROJECT</span></h5>
+            
+            <h3>Online Payment: </h3>
+
+            <br>
+
+            <p>Online Payment is nothing but the default in online payment fraud .
+                In Banking sector this is an important factor to be considered.
+            </p>
+
+            <br>
+
+            <h3>Objective Online Payment Fraud Detection :</h3>
+
+            <br>
+
+            <p>
+                Find the best machine learning algorithm to help them detect fraudulent transactions on their network.
+                Fraudsters usually hack the systems for their benefits.
+                This project will benefit bank identify the best algorithm for the job, identify the best metrics to keep in mind and to also identify further steps they would need to take based on the model selection.
+            </p>
+
+            <p>
+                    In this project, we will analyse customer-level data
+                which has been collected and analysed during a research collaboration of Worldline and the Machine Learning Group.
+            </p>
+        
+    
+        </div>
+    </div>
+
+<br>
+<br>
+
+  <!-----------------------------  FORM SECTIOIN  ----------------------------------->
+
+    <div class="w3-content" id="form1" style="max-width:800px">
+
+    <center>
+    <h1>Please fill out the form below</h1>
+    </center>
+    <br>
+    <hr>
+
+    <form   method="POST">
+        {# This hidden_tag is a CSRF security feature. #}
+        {{ form.hidden_tag() }}
+
+        {{ form.step.label }}{{form.step}}
+        <hr>
+
+        {{ form.type.label}} {{form.type}}
+        <hr>
+
+        {{form.amount.label}} {{form.amount}}
+        <hr>
+
+        {{form.sender_OldBal.label}} {{form.sender_OldBal}}
+        <hr>
+
+        {{form.sender_NewBal.label}} {{form.sender_NewBal}}
+        <hr>
+
+        {{form.recipient_OldBal.label}} {{form.recipient_OldBal}}
+        <hr>
+
+        {{form.recipient_NewBal.label}} {{form.recipient_NewBal}}
+        <hr>
+
+        <br>
+     
+        <hr>
+
+        <div class="w3-center">
+
+            {{ form.submit() }}
+
+        </div>
+
+       
+
+    </form>
+
+
+
+    </div>
+
+  <!----------------------------------------------------------------------------->
+
+
+
+
+</div>
+
+{% endblock %}
+
+  <!-----------------------------  THE END  ----------------------------------->

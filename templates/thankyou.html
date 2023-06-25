@@ -1,0 +1,135 @@
+  
+  <!-- 
+NAME @: Priyanka Sawant
+TOPIC @: Online Payment Fraud Detection Model Deployment
+DATE @:  11/06/2023
+-->
+
+
+ <!----------------------------- BASE SECTION  ----------------------------------->
+
+{% extends "base.html"%}
+
+  <!------------------------------------------------------------------------------->
+
+{% block content %}
+
+
+  <!-------------------------- THANKYOU BODY SECTION ------------------------------->
+
+
+<div class=" w3-pale-yellow">
+  
+<div class="w3-center w3-padding-64">
+  <h1>Thank you. Here is the info you gave:</h1>
+  <hr>
+</div>
+
+
+<div id=table1>
+<div class="container">
+
+  <!-----------------------------  INFO TABLE   ----------------------------------->
+  
+   <table class="table table-dark table-hover">
+   <thead>
+        <tr>
+          <th>INFO</th>
+          <th>DATA</th>
+        </tr>
+      </thead>
+      
+      
+      <tbody>
+      
+        <tr>
+          <b>
+            <td> Full Step :  </td>
+              <td>{{session['step']}}</td>
+           </b>
+           
+        </tr>
+        
+        <tr>
+          <b>
+            <td> Type : </td>
+              <td> {{session['type']}}</td>
+          </b>
+        </tr>
+            
+         <tr>
+          <b>
+            <td>Amount :</td>
+              <td>{{session['amount']}}</td>
+          </b>
+        </tr>
+        
+         <tr>
+          <b>
+            <td>Sender Old Balance:</td>
+              <td>{{session['sender_OldBal']}}</td>
+          </b>
+        </tr>
+        
+         <tr>
+          <b>
+            <td>Sender New Balance:</td>
+              <td>{{session['sender_NewBal']}}</td>
+  
+          </b>
+        </tr>
+        
+         <tr>
+          <b>
+            <td> Recipient Old Balance: </td>
+              <td>{{session['recipient_OldBal']}}</td>
+          </b>
+        </tr>
+        
+         <tr>
+          <b>
+            <td>Recipient New Balance : </td>
+              <td>{{session['recipient_NewBal']}}</td>
+          </b>
+        </tr>
+        
+
+        
+
+        
+
+    </tbody>
+    </table>
+  </div>
+  
+</div>
+
+  <!---------------------------- PREDICTION   SECTION  ---------------------------------->
+
+<div class=" w3-pale-blue w3-center">
+  <h1>
+    <hr>
+    <br>
+    {% if results ==  1 %}
+
+      <br>
+      Your payment is {{results}}.
+     
+    {% else %}
+
+      <br>
+      Your payment is {{results}}
+    {% endif %}
+  </h1>
+
+  <br>
+  <br>
+  <br>
+</div>
+
+
+</div>
+
+  {% endblock %}
+
+    <!---------------------------------  THE END  ----------------------------------------->
